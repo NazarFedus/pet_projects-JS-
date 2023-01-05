@@ -35,3 +35,18 @@ placeholders.forEach(placeholder => {
           }
      })
 })
+
+// work with the buttons
+
+const button = document.getElementById('btn');
+const input = document.getElementById('input');
+const list = document.getElementById('list');
+
+const DATA = [];
+
+button.addEventListener('click', (event) => {
+     list.append(item)
+     DATA.push(input.value)
+})
+
+console.log(DATA)

@@ -7,6 +7,7 @@
     <title>Drag&Drop</title>
   </head>
   <body>
+
     <div>
       <div class="row">
         <div class="col-header start">Start</div>
@@ -14,12 +15,23 @@
         <div class="col-header done">Ready</div>
       </div>
 
-      <div class="row">
+      <div class="row" id="list">
         <div class="placeholder" id="start">
           <div class="item" draggable="true">Start</div>
         </div>
         <div class="placeholder" id="inprogress"></div>
         <div class="placeholder" id="ready"></div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="card">
+          <h2 class="title">Create new card</h2>
+          <form>
+              <input type="text" id="input" placeholder="Title...">
+              <button type="submit" id="btn">Create</button>
+          </form>
       </div>
     </div>
     <script src="main.js"></script>
