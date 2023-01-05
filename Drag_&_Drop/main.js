@@ -26,5 +26,12 @@ placeholders.forEach(placeholder => {
      placeholder.addEventListener('drop', (event) => {
           event.target.classList.remove('hovered');
           event.target.append(item);
+          if(event.target.id === 'start'){
+               item.innerHTML = 'Start';
+          } else if(event.target.id === 'inprogress'){
+               item.innerHTML = 'In Progress';
+          } else if(event.target.id === 'ready'){
+               item.innerHTML = 'Ready';
+          }
      })
 })

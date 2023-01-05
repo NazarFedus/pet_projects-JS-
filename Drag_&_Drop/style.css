@@ -36,9 +36,9 @@ body {
   border: 1px solid #eee;
   box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
   border-radius: 20px;
-  background: #f7f6f7;
+  background: #228594;
   padding: 0.8rem 1rem;
-  color: #828282;
+  color: #fff;
   text-align: center;
   cursor: grab;
 }
@@ -69,11 +69,13 @@ body {
 /*  */
 
 .hold{
-     border: 5px solid #ff0000;
+  border-color: #29e340 #e0e525 #e31d25;
+  border-style: solid;
+  border-width: 2px;
 }
 .hide{
      display: none;
 }
 .hovered{
-  border-top: 2px solid #229efd ;
+  border-top: 1.5px solid #fff;
 }
