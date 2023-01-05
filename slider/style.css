@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 * {
@@ -96,11 +95,6 @@ button:focus {
   transform: translateY(-100%);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-}
-
-li{
-     list-style-type: none;
-     font-family: 'Poppins', sans-serif;
 }
 h1{
      font-family: 'Lobster', cursive;
