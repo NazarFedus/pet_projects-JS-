@@ -1,3 +1,3 @@
 ## Slider
 
-Amazing slider by JS!
+# Slider with animation on JS.
