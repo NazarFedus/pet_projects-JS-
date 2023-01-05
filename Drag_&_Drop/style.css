@@ -6,7 +6,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #e5e5e5;
+  background-color: #173e58;
   display: flex;
   padding-top: 5rem;
   justify-content: center;
@@ -27,6 +27,7 @@ body {
   border-radius: 20px;
   padding: 0.8rem 1rem;
   color: #fff;
+  text-align: center;
 }
 
 .item {
@@ -52,15 +53,15 @@ body {
 }
 
 .start {
-  background: linear-gradient(90deg, #ff85e4 0%, #229efd 179.25%);
+  background: #e31d25;
 }
 
 .progress {
-  background: linear-gradient(90deg, #209cff 0%, #68e0cf 100%);
+  background: #e0e525;
 }
 
 .done {
-  background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
+  background: #29e340;
 }
 
 
