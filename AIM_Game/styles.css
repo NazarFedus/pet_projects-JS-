@@ -13,6 +13,9 @@ body {
   text-align: center;
 }
 
+.none{
+  display: none !important;
+}
 a {
   color: #fff;
   text-decoration: none;
@@ -100,3 +103,26 @@ h1 {
   border-radius: 50%;
   cursor: pointer;
 }
+
+/* Extra buttons */
+
+#home{
+
+  background-color: #13f2be;
+}
+#restart{
+  background-color: #13f2be;
+}
+.btn-list button{
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+}
+.btn-list{
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 6px;
+}
+
+
