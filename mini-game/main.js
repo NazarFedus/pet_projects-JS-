@@ -1,25 +1,34 @@
+const screen = document.querySelector('.box-form');
+const amount = document.querySelector('.amount')
+const button = document.querySelector('.btn')
+
 const board = document.getElementById('board');
+
 const colors = ['#17bad3', '#a717d4', '#e3f133', '#2023eb', '#3deb1e', '##eb1ea1', '#1e6ceb'];
-const SQUARES_NUMBER = 500;
 
-for(let i = 0; i < SQUARES_NUMBER; i++){
-     // Create a div element
-     const square = document.createElement('div');
-     // Add a class to the div element
-     square.classList.add('square');
+button.addEventListener('click', () =>{
+     screen.classList.add('none')
+     board.classList.remove('none')
 
-     // when the mouse is over the square, change the color
-     square.addEventListener('mouseover', () => {
-          setColor(square);
-     })
-     // when the mouse leaves the square
-     square.addEventListener('mouseleave', () => {
-          removeColor(square);
-     })
+     for(let i = 0; i < amount.value; i++){
+          // Create a div element
+          const square = document.createElement('div');
+          // Add a class to the div element
+          square.classList.add('square');
 
-     // Add the div element to the board
-     board.append(square);
-}
+          // when the mouse is over the square, change the color
+          square.addEventListener('mouseover', () => {
+               setColor(square);
+          })
+          // when the mouse leaves the square
+          square.addEventListener('mouseleave', () => {
+               removeColor(square);
+          })
+
+          // Add the div element to the board
+          board.append(square);
+     }
+})
 
 function setColor(element){
      const color = getRandomColor();
