@@ -7,6 +7,9 @@ const board = document.getElementById('board');
 const colors = ['#17bad3', '#a717d4', '#e3f133', '#2023eb', '#3deb1e', '##eb1ea1', '#1e6ceb'];
 
 button.addEventListener('click', () =>{
+     if(!checkF()){
+          return;
+     }
      screen.classList.add('none')
      board.classList.remove('none')
 
@@ -44,4 +47,15 @@ function removeColor(element){
 function getRandomColor(){
      const index = Math.floor(Math.random() *colors.length);
      return colors[index];
+}
+
+// validation
+function checkF(){
+     if(isNaN(amount.value) || amount.value === '' || amount.value === '0'){
+          alert('Please enter correct value!');
+          return false;
+     }
+     else{
+          return true;
+     }
 }
