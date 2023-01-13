@@ -4,7 +4,6 @@ const timeList = document.getElementById('time-list');
 const timeEl = document.getElementById('time');
 const board = document.getElementById('board');
 
-const btnHome = document.getElementById('home');
 const btnRestart = document.getElementById('restart');
 
 const colors = ['#e51220', '#12e5d7', '#48e612', '#f2d714', '#ec13f2', '#1321f2', '#f28a13'];
@@ -19,7 +18,6 @@ let score = 0;
 startBtn.addEventListener('click', (event) => {
      event.preventDefault();
      screens[0].classList.add('up');
-     btnHome.classList.remove('none');
 });
 
 timeList.addEventListener('click', (event) => {
@@ -38,13 +36,6 @@ board.addEventListener('click', event => {
           event.target.remove()
           createRandomCircle()
      }
-})
-
-btnHome.addEventListener('click', () => {
-     screens[1].classList.remove('up');
-     screens[0].classList.remove('up');
-     finishGame()
-     timeEl.parentNode.classList.remove('hide');
 })
 
 btnRestart.addEventListener('click', () => {
