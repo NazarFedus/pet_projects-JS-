@@ -9,9 +9,10 @@ const btnRestart = document.getElementById('restart');
 
 const colors = ['#e51220', '#12e5d7', '#48e612', '#f2d714', '#ec13f2', '#1321f2', '#f28a13'];
 
-let currentCircle;
-let beginTime;
-
+let refreshIntervalId = null;
+let currentTime = 0;
+let aimcircle = [];
+let scoreBoard = '';
 let time = 0;
 let score = 0;
 
@@ -26,6 +27,7 @@ timeList.addEventListener('click', (event) => {
           time = Number(event.target.getAttribute('data_time'));
           screens[1].classList.add('up');
           btnRestart.classList.remove('none');
+          currentTime = time;
           startGame()
      }
 })
@@ -46,15 +48,20 @@ btnHome.addEventListener('click', () => {
 })
 
 btnRestart.addEventListener('click', () => {
+     hideScore()
+     score = 0;
+     time = 0;
      timeEl.parentNode.classList.remove('hide');
-     clearInterval();
-     time = beginTime;
+     clearInterval(refreshIntervalId);
+     time = currentTime;
+     aimcircle.forEach(item => item.remove())
      startGame();
+
 })
 
 function startGame(){
      beginTime = time;
-     setInterval(decreaseTime, 1000)
+     refreshIntervalId = setInterval(decreaseTime, 1000);
      createRandomCircle()
      setTime(time)
 }
@@ -77,9 +84,7 @@ function setTime(value){
 
 function finishGame(){
      timeEl.parentNode.classList.add('hide'); // parentNode - повертає батьківський елемент
-     board.innerHTML = `<h1>Your score: <span class="primary">${score}</span></h1>`
-     score = 0;
-     time = 0;
+     showScore()
      currentCircle.remove();
 }
 
@@ -101,6 +106,7 @@ function createRandomCircle(){
           circle.style.left = `${x}px`
           circle.style.background = getRandomColor()
 
+          aimcircle.push(circle) // to add circle to array
           currentCircle = circle
           board.append(circle)
 }
@@ -111,4 +117,12 @@ function getRandomNum(min, max){
 
 function getRandomColor(){
      return colors[Math.round(Math.random() * colors.length)]
+}
+
+function showScore(){
+     board.innerHTML = `<h1>Your score: <span class="primary">${score}</span></h1>`;
+}
+
+function hideScore(){
+     board.innerHTML = '';
 }
